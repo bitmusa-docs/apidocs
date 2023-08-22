@@ -1,0 +1,2229 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta
+            name="Bitmusa API Documentation"
+        >
+        <meta
+            content="Bitmusa API Documentation"
+        >
+    <title>Bitmusa API Documentation</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-2f25128d.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-966d6edc.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-b12a2749.js"></script>
+
+    <script>
+      $(function() { setupCodeCopy(); });
+    </script>
+  </head>
+
+  <body class="index" data-languages="[]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <a href="https://bitmusa.com">
+        <img src="images/logo-34b99611.svg" class="logo" alt="" />
+      </a>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#api-key-setup" class="toc-h2 toc-link" data-title="API Key Setup">API Key Setup</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#general-info" class="toc-h1 toc-link" data-title="General Info">General Info</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#general-api-information" class="toc-h2 toc-link" data-title="General API information">General API information</a>
+                  </li>
+                  <li>
+                    <a href="#endpoint-security-type" class="toc-h2 toc-link" data-title="Endpoint Security Type">Endpoint Security Type</a>
+                  </li>
+                  <li>
+                    <a href="#limit-of-requests" class="toc-h2 toc-link" data-title="Limit of requests">Limit of requests</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#spot-endpoint" class="toc-h1 toc-link" data-title="Spot Endpoint">Spot Endpoint</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#spot-wallet" class="toc-h2 toc-link" data-title="Spot Wallet">Spot Wallet</a>
+                  </li>
+                  <li>
+                    <a href="#spot-market" class="toc-h2 toc-link" data-title="Spot Market">Spot Market</a>
+                  </li>
+                  <li>
+                    <a href="#spot-orderbook" class="toc-h2 toc-link" data-title="Spot OrderBook">Spot OrderBook</a>
+                  </li>
+                  <li>
+                    <a href="#spot-market-trades" class="toc-h2 toc-link" data-title="Spot Market Trades">Spot Market Trades</a>
+                  </li>
+                  <li>
+                    <a href="#spot-order-history" class="toc-h2 toc-link" data-title="Spot Order History">Spot Order History</a>
+                  </li>
+                  <li>
+                    <a href="#spot-trade-history" class="toc-h2 toc-link" data-title="Spot Trade History">Spot Trade History</a>
+                  </li>
+                  <li>
+                    <a href="#spot-order" class="toc-h2 toc-link" data-title="Spot Order">Spot Order</a>
+                  </li>
+                  <li>
+                    <a href="#spot-order-cancel" class="toc-h2 toc-link" data-title="Spot Order Cancel">Spot Order Cancel</a>
+                  </li>
+                  <li>
+                    <a href="#spot-order-cancel-all" class="toc-h2 toc-link" data-title="Spot Order Cancel ALL">Spot Order Cancel ALL</a>
+                  </li>
+                  <li>
+                    <a href="#spot-current-k-line" class="toc-h2 toc-link" data-title="Spot Current K-Line">Spot Current K-Line</a>
+                  </li>
+                  <li>
+                    <a href="#spot-k-line-history" class="toc-h2 toc-link" data-title="Spot K-Line History">Spot K-Line History</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#futures-endpoints" class="toc-h1 toc-link" data-title="Futures Endpoints">Futures Endpoints</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#futures-wallet" class="toc-h2 toc-link" data-title="Futures Wallet">Futures Wallet</a>
+                  </li>
+                  <li>
+                    <a href="#futures-market-trades" class="toc-h2 toc-link" data-title="Futures Market Trades">Futures Market Trades</a>
+                  </li>
+                  <li>
+                    <a href="#futures-market" class="toc-h2 toc-link" data-title="Futures Market">Futures Market</a>
+                  </li>
+                  <li>
+                    <a href="#futures-orderbook" class="toc-h2 toc-link" data-title="Futures OrderBook">Futures OrderBook</a>
+                  </li>
+                  <li>
+                    <a href="#futures-position" class="toc-h2 toc-link" data-title="Futures Position">Futures Position</a>
+                  </li>
+                  <li>
+                    <a href="#futures-position-close-all" class="toc-h2 toc-link" data-title="Futures Position Close All">Futures Position Close All</a>
+                  </li>
+                  <li>
+                    <a href="#futures-leverage" class="toc-h2 toc-link" data-title="Futures Leverage">Futures Leverage</a>
+                  </li>
+                  <li>
+                    <a href="#futures-order" class="toc-h2 toc-link" data-title="Futures Order">Futures Order</a>
+                  </li>
+                  <li>
+                    <a href="#futures-open-order" class="toc-h2 toc-link" data-title="Futures Open Order">Futures Open Order</a>
+                  </li>
+                  <li>
+                    <a href="#futures-order-cancel" class="toc-h2 toc-link" data-title="Futures Order Cancel">Futures Order Cancel</a>
+                  </li>
+                  <li>
+                    <a href="#futures-order-cancel-all" class="toc-h2 toc-link" data-title="Futures Order Cancel All">Futures Order Cancel All</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://bitmusa.com'>Bitmusa</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1><h2 id='api-key-setup'>API Key Setup</h2>
+<ul>
+<li>All endpoints will require an API Key/secret Key.</li>
+<li>Never share your API Key/secret Key.</li>
+</ul>
+
+<aside class="warning">
+If your API key is inadvertently exposed, delete it immediately and generate a new key.
+</aside>
+<h1 id='general-info'>General Info</h1><h2 id='general-api-information'>General API information</h2>
+<ul>
+<li>Base API URL
+
+<ul>
+<li><code>https://api.bitmusa.com</code></li>
+</ul></li>
+<li>Root Endpoint
+
+<ul>
+<li><code>/api/v1</code></li>
+</ul></li>
+<li>All endpoints return either a JSON object or array.</li>
+<li><p>Users can use the Open API provided by BitMusa to develop the following functions for
+trading.</p>
+
+<ul>
+<li>[Spot API] 
+
+<ul>
+<li>Spot Wallet</li>
+<li>Spot Market</li>
+<li>Spot OrderBook</li>
+<li>Spot Market Trades</li>
+<li>Spot Open Order</li>
+<li>Spot Order history</li>
+<li>Spot Trade history</li>
+<li>Spot Order</li>
+<li>Spot Order cancel</li>
+<li>Spot Order Cancel All</li>
+<li>Spot Current Kline</li>
+<li>Spot Kline History</li>
+</ul></li>
+<li>[Futures API]
+
+<ul>
+<li>Futures Wallet</li>
+<li>Futures Market Trades</li>
+<li>Futures Market</li>
+<li>Futures OrderBook</li>
+<li>Futures Position</li>
+<li>Futures Position Close All</li>
+<li>Futures Leverage</li>
+<li>Futures Order(Open/Close)</li>
+<li>Futures Open Order</li>
+<li>Futures Order Cancel</li>
+<li>Futures Order Cancel All</li>
+</ul></li>
+</ul></li>
+</ul>
+<h2 id='endpoint-security-type'>Endpoint Security Type</h2>
+<ul>
+<li>API Key/Auth Key are passed into the Rest API via the <code>x-api-key</code>/<code>Authorization</code>  header.</li>
+</ul>
+<h2 id='limit-of-requests'>Limit of requests</h2>
+<ul>
+<li>All APIs we provide are limited to 8 times per second and 200 times per minute to ensure
+smooth service.</li>
+</ul>
+<h1 id='spot-endpoint'>Spot Endpoint</h1><h2 id='spot-wallet'>Spot Wallet</h2>
+<p><code>GET /spot/wallet</code></p>
+
+<p>Get user assets or positive assets data.</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1576</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">79010</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"coin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bitcoin"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"nameCn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bitcoin"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"unit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"minTxFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"maxTxFee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"cnyRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"enableRpc"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"sort"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"canSend"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"canWithdraw"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"canRecharge"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"canTransfer"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"canAutoWithdraw"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdrawScale"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdrawThreshold"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"minWithdrawAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0E-5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"maxWithdrawAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"minRechargeAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0E-6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isPlatformCoin"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"isToken"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"hasLegal"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"allBalance"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"coldWalletAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"14QZK9h8udeB6riNfrNRYhK5ptHzJTmjM5"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"hotAllBalance"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"blockHeight"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"minerFee"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"infolink"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"information"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"accountType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"depositAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mi1Q3VpBYr7XJL9pP51Vpw1WLc1eXSQxzX"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"memoAdjust"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"scanTxidWeburl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.blockchain.com/btc/tx/"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"scanAddressWeburl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://www.blockchain.com/btc/address/"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"visible"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"testMode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"networkCoins"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"defaultIcon"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"spotTradable"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"frozenBalance"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lockedBalance"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"toReleased"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"networkCoin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mgD26J1cL3AmC6URuBo7gbVrEYJ6trDQ9S"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"tag"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"memo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isLock"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>asset</td>
+<td>String</td>
+<td>No</td>
+<td>If blank, then query all positive assets that user have</td>
+</tr>
+</tbody></table>
+<h2 id='spot-market'>Spot Market</h2>
+<p><code>GET /spot/market</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDayClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseUsdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"zone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseCoinScale"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ETH/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">1777.74</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"chg"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"change"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lastDayClose"</span><span class="p">:</span><span class="w"> </span><span class="mf">1777.74</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"usdRate"</span><span class="p">:</span><span class="w"> </span><span class="mf">1777.74</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseUsdRate"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"zone"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseCoinScale"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-2'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h2 id='spot-orderbook'>Spot OrderBook</h2>
+<p><code>GET /spot/market/orderbook</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"ask"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">96.54808</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.7E-4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"highestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">50000.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lowestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">23380.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">23380.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">53.89597</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">23380.06</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"bid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maxAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">9150.74</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"minAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0E-4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"highestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"lowestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">7.2E-4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">23360.0</span><span class="p">,</span><span class="w">
+          </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.0</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-3'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-2'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='spot-market-trades'>Spot Market Trades</h2>
+<p><code>GET /spot/market/trade</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6483023c16e8ca6c5314628f"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0E-5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTurnover"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9351892</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTurnover"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9351892</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E168630738000719"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E168630738833757"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686307388354</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timeString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-09 10:43:08"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6483023b16e8ca6c53146288"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.0E-5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyTurnover"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9351892</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellTurnover"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.9351892</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELL"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"buyOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E168630737952495"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"sellOrderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E168630738788938"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686307387913</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timeString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-09 10:43:07"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-4'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-3'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td>int</td>
+<td>No</td>
+<td>Default : 20</td>
+</tr>
+</tbody></table>
+<h2 id='spot-order-history'>Spot Order History</h2>
+<p><code>GET /spot/order/history</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E168653566641932"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">79010</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coinSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET_PRICE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BASE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2E-4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686535666419</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"completedTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686535666456</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"canceledTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"useDiscount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderResource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CUSTOMER"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E168653566392012"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">79010</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coinSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COMPLETED"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET_PRICE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amountType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BASE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2E-4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686535663920</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"completedTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686535663951</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"canceledTime"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"useDiscount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderResource"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CUSTOMER"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"detail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-5'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-4'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>int</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>int</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Yes</td>
+<td>TRADING(미체결),<br> COMPLETED(체결완료),<br> CANCELED (취소)</td>
+</tr>
+<tr>
+<td>size</td>
+<td>int</td>
+<td>No (If startTime and endTime  is not set, it is mandatory)</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='spot-trade-history'>Spot Trade History</h2>
+<p><code>GET /spot/trade/history</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72405394"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686535666448</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">79010</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coinSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET_PRICE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TAKER"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">23380.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2E-4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E168653566641932"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"72405392"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686535663942</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"memberId"</span><span class="p">:</span><span class="w"> </span><span class="mi">79010</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC/USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coinSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"baseSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BUY"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MARKET_PRICE"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TAKER"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">23380.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tradedAmount"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.2E-4</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E168653566392012"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"feeSymbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-6'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-5'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>startTime</td>
+<td>int</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>endTime</td>
+<td>int</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>direction</td>
+<td>String</td>
+<td>Yes</td>
+<td>BUY,<br> SELL</td>
+</tr>
+<tr>
+<td>size</td>
+<td>int</td>
+<td>No (If startTime and endTime is not set, it is mandatory)</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='spot-order'>Spot Order</h2>
+<p><code>POST /spot/order</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="s2">"E168629530081880"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-7'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-6'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>price</td>
+<td>string</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>amount</td>
+<td>string</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>direction</td>
+<td>string</td>
+<td>Yes</td>
+<td>BUY,<br> SELL</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Yes</td>
+<td>LIMIT_PRICE,<br> MARKET_PRICE</td>
+</tr>
+</tbody></table>
+<h2 id='spot-order-cancel'>Spot Order Cancel</h2>
+<p><code>POST /spot/order/cancel/{orderId}</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-8'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='pathvalue'>PathValue:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='spot-order-cancel-all'>Spot Order Cancel ALL</h2>
+<p><code>POST /spot/order/cancel/all</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-9'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='pathvalue-2'>PathValue:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='spot-current-k-line'>Spot Current K-Line</h2>
+<p>Get current chart data</p>
+
+<p><code>GET /spot/market/kline/current</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"openPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"highestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lowestPrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"closePrice"</span><span class="p">:</span><span class="w"> </span><span class="mf">23379.73</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"timeString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1970-01-01 00:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"endTimeString"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"period"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1min"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"turnover"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-10'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-7'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>resolution</td>
+<td>String</td>
+<td>Yes</td>
+<td>1 (1 minute)<br/> 30 (30 minute)<br/> 60 (1 hour)<br/> 1D (1 day)<br/> 1W (1 week)<br/> 1M (1 month)<br/></td>
+</tr>
+</tbody></table>
+<h2 id='spot-k-line-history'>Spot K-Line History</h2>
+<p><code>GET /spot/market/kline/history</code></p>
+
+<p>Get chart history data</p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="mi">1686524580000</span><span class="p">,</span><span class="w">
+      </span><span class="mf">26488.46</span><span class="p">,</span><span class="w">
+      </span><span class="mf">26488.46</span><span class="p">,</span><span class="w">
+      </span><span class="mf">26488.46</span><span class="p">,</span><span class="w">
+      </span><span class="mf">26488.46</span><span class="p">,</span><span class="w">
+      </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2023-06-11 23:03:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2023-06-11 23:05:00"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="p">[</span><span class="w">
+      </span><span class="mi">1686524700000</span><span class="p">,</span><span class="w">
+      </span><span class="mf">26488.46</span><span class="p">,</span><span class="w">
+      </span><span class="mf">26488.46</span><span class="p">,</span><span class="w">
+      </span><span class="mf">26488.46</span><span class="p">,</span><span class="w">
+      </span><span class="mf">26488.46</span><span class="p">,</span><span class="w">
+      </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2023-06-11 23:05:00"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"2023-06-11 23:06:00"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-11'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-8'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>from</td>
+<td>String</td>
+<td>Yes</td>
+<td>unix timestamp</td>
+</tr>
+<tr>
+<td>to</td>
+<td>String</td>
+<td>Yes</td>
+<td>unix timestamp</td>
+</tr>
+<tr>
+<td>resolution</td>
+<td>String</td>
+<td>Yes</td>
+<td>1 (1 minute)<br/> 30 (30 minute)<br/> 60 (1 hour)<br/> 1D (1 day)<br/> 1W (1 week)<br/> 1M (1 month)<br/></td>
+</tr>
+</tbody></table>
+<h1 id='futures-endpoints'>Futures Endpoints</h1><h2 id='futures-wallet'>Futures Wallet</h2>
+<p><code>GET /future/wallet</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_wallet_balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.911789292484</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_margin_balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.911789292484</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_available_balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.911789292484</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"total_unpnl"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h2 id='futures-market-trades'>Futures Market Trades</h2>
+<p><code>GET /future/market/trade</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26467.1000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.1230000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29722.5533000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"traded_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1692371062979</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26467.1000000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8.4680000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"224123.4028000000000000"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"traded_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1692366377010</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-2'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td>int</td>
+<td>No</td>
+<td>Default : 100</td>
+</tr>
+</tbody></table>
+<h2 id='futures-market'>Futures Market</h2>
+<p><code>GET /future/market</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"pk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01H2VFYH7YX5WC0NXKF9EB2V55"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"base_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">26138.4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">26662.6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">21102.9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">26059.2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"mark_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">25965.8276571</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"index_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">25964.82729</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"funding_fee_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.0E-4</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"funding_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686700800000</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"remaining_funding_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1384997</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"change_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">-79.2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"change_rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.303</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">224772.239</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"total_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">5.880733979646818E9</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last_updated_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1686706615003</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-3'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-2'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='futures-orderbook'>Futures OrderBook</h2>
+<p><code>GET /future/market/orderbook</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"sell"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26554.3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01H2EXD7FNF2ZA4FNERPB7YED0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"982.5091"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.037"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.02958114595E7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">764.522</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1686275268083"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"add"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26554.2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01H2EXCQQYMD23N3GMZQWV1NC5"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"451.4214"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.017"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.02948289504E7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">764.485</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1686275451456"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"add"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"buy"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26538.8"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01H2FD9XHBBZ9AZQ36135CF1FW"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10468548.1256"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"394.462"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.04685481256E7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">394.462</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1686291965027"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"add"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"payload"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"26538.7"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"pk"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01H2FDA4T0N9PDZXT6ZDWYAAX3"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"101537.0662"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.826"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.05700851918E7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">398.288</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"scale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1686291960645"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"add"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+      </span><span class="err">...</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-4'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-3'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ticker</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>size</td>
+<td>int</td>
+<td>No</td>
+<td>default : 50</td>
+</tr>
+</tbody></table>
+<h2 id='futures-position'>Futures Position</h2>
+<p><code>GET /future/position</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">535</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"entry_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">26617.03674876</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"margin_gap"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"liquid_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">25764.30575663</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close_fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.8125511</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">79010</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"bankruptcy_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">25631.22057289</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"take_profit_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"entry_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-09T10:21:46"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coin_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"initial_margin"</span><span class="p">:</span><span class="w"> </span><span class="mf">2001.20683703</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"close_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"maintenance_margin"</span><span class="p">:</span><span class="w"> </span><span class="mf">270.16292299</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"stop_loss_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ticker_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"liquid_margin"</span><span class="p">:</span><span class="w"> </span><span class="mf">852.73099213</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"adl"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"margin_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.03</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position_margin"</span><span class="p">:</span><span class="w"> </span><span class="mf">2022.01938813</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"return_liquid_margin"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">54032.5846</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"extra_margin"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-5'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-4'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ticker</td>
+<td>String</td>
+<td>Yes</td>
+<td>If blank, then query all position that user have</td>
+</tr>
+</tbody></table>
+<h2 id='futures-position-close-all'>Futures Position Close All</h2>
+<p>Close All Positions On That Ticker Or Close All Positions On All Tickers</p>
+
+<p><code>POST /future/position/close/all</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-6'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-5'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ticker</td>
+<td>String</td>
+<td>Yes</td>
+<td>all : close all positions on all tickers</td>
+</tr>
+</tbody></table>
+<h2 id='futures-leverage'>Futures Leverage</h2>
+<p><code>POST /future/leverage</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-7'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-6'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ticker</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>leverage</td>
+<td>int</td>
+<td>Yes</td>
+<td>1 ~ 125</td>
+</tr>
+</tbody></table>
+<h2 id='futures-order'>Futures Order</h2>
+<p><code>POST /future/order</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-8'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-7'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ticker</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>direction</td>
+<td>int</td>
+<td>Yes</td>
+<td>0 : OPEN <br> 1 : CLOSE</td>
+</tr>
+<tr>
+<td>margin_mode</td>
+<td>int</td>
+<td>Yes</td>
+<td>0 : ISOLATED</td>
+</tr>
+<tr>
+<td>position</td>
+<td>int</td>
+<td>Yes</td>
+<td>0 : BUY(Long)<br> 1 : SELL(Short)  <br> close : on the other way</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td>int</td>
+<td>Yes</td>
+<td>0 : MARKET <br> 1 : LIMIT</td>
+</tr>
+<tr>
+<td>order_price</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>order_qty</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>is_reduce_only</td>
+<td>boolean</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>is_post_only</td>
+<td>boolean</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>is_take_profit</td>
+<td>boolean</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>take_profit_trigger_type</td>
+<td>int</td>
+<td>No (is_take_profit = true : Yes )</td>
+<td>1 : MARK <br/> 2 : LAST</td>
+</tr>
+<tr>
+<td>take_profit_trigger_price</td>
+<td>String</td>
+<td>No (is_take_profit = true : Yes )</td>
+<td></td>
+</tr>
+<tr>
+<td>take_profit_order_type</td>
+<td>int</td>
+<td>No (is_take_profit = true : Yes )</td>
+<td>0 : MARKET <br> 1 : LIMIT</td>
+</tr>
+<tr>
+<td>take_profit_order_price</td>
+<td>String</td>
+<td>No (take_profit_order_type = true : Yes )</td>
+<td></td>
+</tr>
+<tr>
+<td>is_stop_loss</td>
+<td>boolean</td>
+<td>No (is_stop_loss = true : Yes )</td>
+<td></td>
+</tr>
+<tr>
+<td>stop_loss_trigger_type</td>
+<td>int</td>
+<td>No (is_stop_loss = true : Yes )</td>
+<td>1 : MARK <br/> 2 : LAST</td>
+</tr>
+<tr>
+<td>stop_loss_trigger_price</td>
+<td>String</td>
+<td>No (is_stop_loss = true : Yes )</td>
+<td></td>
+</tr>
+<tr>
+<td>stop_loss_order_type</td>
+<td>int</td>
+<td>No (is_stop_loss = true : Yes )</td>
+<td>0 : MARKET <br> 1 : LIMIT</td>
+</tr>
+<tr>
+<td>stop_loss_order_price</td>
+<td>String</td>
+<td>No (stop_loss_order_type = true : Yes )</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='futures-open-order'>Futures Open Order</h2>
+<p><code>GET /future/order</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">277419</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ticker_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"member_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">79010</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F7901016863067195812430"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"margin_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"tif_mode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTCUSDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"coin_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BTC"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"base_symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USDT"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"leverage"</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">26607.1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"traded_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"traded_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"traded_value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"left_qty"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_post_only"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_reduce_only"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"is_price_protected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"trigger"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"order_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-06-09T10:32:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"filled_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"cancel_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-9'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-8'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ticker</td>
+<td>String</td>
+<td>No</td>
+<td>If blank, then query all</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>String</td>
+<td>No</td>
+<td>unix timestamp</td>
+</tr>
+<tr>
+<td>size</td>
+<td>int</td>
+<td>No</td>
+<td>default : 50</td>
+</tr>
+</tbody></table>
+<h2 id='futures-order-cancel'>Futures Order Cancel</h2>
+<p><code>POST /future/order/cancel/{orderId}</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-10'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='pathvalue'>PathValue:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id='futures-order-cancel-all'>Futures Order Cancel All</h2>
+<p><code>POST /future/order/cancel/all</code></p>
+
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='headers-11'>Headers:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Yes</td>
+<td>Auth Key (type = Bearer)</td>
+</tr>
+<tr>
+<td>x-api-token</td>
+<td>String</td>
+<td>Yes</td>
+<td>API key</td>
+</tr>
+</tbody></table>
+<h3 id='parameter-9'>Parameter:</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ticker</td>
+<td>String</td>
+<td>Yes</td>
+<td>all : cancel all positions on all tickers</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+      </div>
+    </div>
+  </body>
+</html>
